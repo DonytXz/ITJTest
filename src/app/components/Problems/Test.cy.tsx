@@ -13,8 +13,8 @@ describe('<Test />', () => {
 
     let test1Data: Array<any> = (Test1FinalResults as Array<object>);
     test1Data.map((element:any) =>{
-      let strResult = element.result[0] + " " + element.result[1];
-      let strAwnser = element.awnser[0] + " " + element.awnser[1];
+      let strResult = (element.result[0] != undefined ? element.result[0] : "")  + " " + (element.result[1] != undefined ? element.result[1] : "");
+      let strAwnser = (element.awnser[0] != undefined ? element.awnser[0] : "")  + " " + (element.awnser[1] != undefined ? element.awnser[1] : "");
       expect(strResult).to.equal(strAwnser);
     })
   })
@@ -22,8 +22,8 @@ describe('<Test />', () => {
     executeTest2();
     let test2Data: Array<any> = (Test2FinalResults as Array<object>);
     test2Data.map((element:any) =>{
-      let strResult = element.result[0] + " " + element.result[1];
-      let strAwnser = element.awnser[0] + " " + element.awnser[1];
+      let strResult = (element.result[0] != undefined ? element.result[0] : "")  + " " + (element.result[1] != undefined ? element.result[1] : "");;
+      let strAwnser = (element.awnser[0] != undefined ? element.awnser[0] : "")  + " " + (element.awnser[1] != undefined ? element.awnser[1] : "");
       expect(strResult).to.equal(strAwnser);
   })
   })
